@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Webデザイナー専門用語</title>
+
+		<!-- ★消えていたSEO・OGP・構造化データを完全復元しました！ -->
+		<meta
+			name="description"
+			content="Stickyヘッダー・カルーセル・FAQなど実務UIと、タイトル/ディスクリプション/OGP/FAQリッチリザルト対応までまとめたWebデザイン教材ページ。"
+		/>
+		<link rel="canonical" href="https://example.com/ui-parts-seo-demo" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="MyDesign Lesson" />
+
+		<!-- OGP（SNSシェア用） -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="MyDesign" />
+		<meta property="og:title" content="Webデザイナー専門用語" />
+		<meta
+			property="og:description"
+			content="Stickyヘッダー/カルーセル/FAQの実装と、SEO基本タグ・構造化データをまとめた授業用デモページ。"
+		/>
+		<meta
+			property="og:image"
+			content="https://picsum.photos/1200/630?random=20"
+		/>
+		<meta property="og:url" content="https://example.com/ui-parts-seo-demo" />
+
+		<!-- Twitterカード -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Webデザイナー専門用語" />
+		<meta
+			name="twitter:description"
+			content="UIパーツ実装とSEOタグの基本を1ページで学べるデモ。授業用にコメント付き。"
+		/>
+		<meta
+			name="twitter:image"
+			content="https://picsum.photos/1200/630?random=20"
+		/>
+
+		<!-- 構造化データ（JSON-LD） -->
+		<!-- Googleのロボット（検索エンジン）専用に書かれた、このページの『カンペ』 -->
+		<!-- Googleで検索されたときに、検索結果の画面に直接「よくある質問」がアコーディオンとして表示されることがあります。（これを「リッチリザルト」と呼びます）。 -->
+		<!-- 検索結果で他のサイトより面積を広く取れて、めちゃくちゃ目立つので、クリックされる確率（アクセス数）が上がります。 -->
+		<script type="application/ld+json">
+			[
+				{
+					"@context": "https://schema.org",
+					"@type": "WebPage",
+					"name": "Webデザイナー専門用語",
+					"description": "Stickyヘッダー・カルーセル・FAQなど実務UIと、タイトル/ディスクリプション/OGP/FAQリッチリザルト対応までまとめたWebデザイン教材ページ。",
+					"url": "https://example.com/ui-parts-seo-demo"
+				},
+				{
+					"@context": "https://schema.org",
+					"@type": "FAQPage",
+					"mainEntity": [
+						{
+							"@type": "Question",
+							"name": "ABテストとは何ですか？",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "サイトやバナーなどを2パターン用意して比較する方法です。期間を決めて検証し、どちらがより良い成果を出すかを分析します。"
+							}
+						},
+						{
+							"@type": "Question",
+							"name": "カラムレイアウトとは何ですか？",
+							"acceptedAnswer": {
+								"@type": "Answer",
+								"text": "Webデザイン上での縦列のレイアウトのことです。分割数によって、シングルカラム・2カラム・3カラムと表現します。このページはPCで見ると2カラムです。"
+							}
+						}
+					]
+				}
+			]
+		</script>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<button id="toggleHintBtn" class="hint-toggle-btn">
+			<span class="hint-icon">💡</span> 解説 <kbd>Z</kbd>
+		</button>
+
+		<!-- 追従ヘッダー -->
+		<header class="sticky-header">
+			<div class="header-inner">
+				<a href="#" class="header-logo">
+					<img
+						src="https://picsum.photos/40/40?random=10"
+						alt="ロゴ"
+						style="border-radius: 50%"
+					/>
+					MyDesign
+				</a>
+
+				<!-- ハンバーガーメニューボタン -->
+				<button
+					id="hamburgerBtn"
+					class="hamburger-btn hint-target"
+					type="button"
+					aria-expanded="false"
+					aria-controls="mobileNav"
+					aria-label="メニューを開く"
+					data-hint-title="ハンバーガーメニュー"
+					data-hint-desc="「Hamburger menu」は通じますが、「HM」という略称はマイナー。"
+					data-hint-pos="bottom-right"
+				>
+					☰
+				</button>
+
+				<!-- グローバルメニュー（PC用） -->
+				<nav
+					class="global-nav hint-target"
+					data-hint-title="グローバルメニュー"
+					data-hint-desc="<table class='hint-table'><tr><th>呼称</th><th>一般性</th></tr><tr><td>グローバルナビ / グローバルメニュー</td><td>一般</td></tr><tr><td>Global Navigation</td><td>国際的</td></tr><tr><td>Gmenu</td><td>日本の現場略語</td></tr></table>"
+					data-hint-pos="bottom"
+				>
+					<ul>
+						<li><a href="#">ホーム</a></li>
+						<li>
+							<a href="#">商品一覧（ドロップダウン） ▼</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">🍎 フルーツ</a></li>
+								<li><a href="#">🥩 お肉・海鮮</a></li>
+								<li><a href="#">🍷 ドリンク</a></li>
+							</ul>
+						</li>
+						<li><a href="#">お知らせ</a></li>
+						<li><a href="#">会社概要</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- ★追加：モバイル用ドロワーメニュー -->
+		<nav id="mobileNav" class="mobile-nav" aria-label="モバイルグローバルナビ">
+			<div class="mobile-nav__header">
+				<span>メニュー</span>
+				<button
+					id="closeMobileNavBtn"
+					type="button"
+					class="mobile-nav__close"
+					aria-label="メニューを閉じる"
+				>
+					✕
+				</button>
+			</div>
+			<!-- 中身はJSでPC用から自動コピーされます -->
+			<ul id="mobileNavList" class="mobile-nav__list"></ul>
+		</nav>
+		<!-- モバイルメニューを開いたときの背景の暗やみ -->
+		<div
+			id="mobileNavOverlay"
+			class="mobile-nav__overlay"
+			aria-hidden="true"
+		></div>
+
+		<!-- パンくずリスト -->
+		<nav
+			class="breadcrumb hint-target"
+			aria-label="Breadcrumb"
+			data-hint-title="パンくずリスト"
+			data-hint-desc="英語では「Breadcrumb(s)」一択。トピックパスは昔の日本の呼び方です。"
+			data-hint-pos="bottom"
+		>
+			<ol>
+				<li><a href="#">トップ</a></li>
+				<li><a href="#">商品一覧</a></li>
+				<li aria-current="page">パンくずリスト</li>
+			</ol>
+		</nav>
+
+		<div class="container">
+			<main class="main-content">
+				<h1>UIパーツとSEOまとめ</h1>
+				<div class="seo-note">
+					<strong>このページで実践しているSEOリスト</strong>
+					<ul>
+						<li>タイトルとディスクリプションに主キーワード＋価値を入れる</li>
+						<li>canonicalで正規URLを一本化（テスト環境では書き換え必須）</li>
+						<li>見出し階層を整理：h1は1回、h2/h3で内容のアウトラインを作る</li>
+						<li>
+							画像には意味のあるaltを付与（装飾だけなら空altもOKと説明する）
+						</li>
+						<li>構造化データ（WebPage + FAQPage）でリッチリザルトを狙う</li>
+					</ul>
+				</div>
+
+				<!-- カルーセル -->
+				<section>
+					<h3>カルーセル（スライド）</h3>
+					<p style="margin-bottom: 15px; font-size: 14px; color: #666">
+						画像を左右にドラッグして操作可能
+					</p>
+					<div class="swiper mySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img
+									src="https://picsum.photos/800/400?random=1"
+									alt="スライド1"
+								/>
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://picsum.photos/800/400?random=2"
+									alt="スライド2"
+								/>
+							</div>
+							<div class="swiper-slide">
+								<img
+									src="https://picsum.photos/800/400?random=3"
+									alt="スライド3"
+								/>
+							</div>
+						</div>
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</section>
+
+				<!-- 記事レイアウト -->
+				<section>
+					<h3>最新の記事（レイアウトの例）</h3>
+					<div class="post-card">
+						<img
+							src="https://picsum.photos/100/100?random=4"
+							alt="サムネイル"
+						/>
+						<div>
+							<h4 style="margin: 0 0 5px 0">SEO対策の基本とは？</h4>
+							<p style="margin: 0; font-size: 14px; color: #666">
+								適切なキーワードや構造・質の高い内容を整えることで、検索結果でサイトを上位に表示させるための工夫です。
+							</p>
+						</div>
+					</div>
+					<div class="post-card">
+						<img
+							src="https://picsum.photos/100/100?random=5"
+							alt="サムネイル"
+						/>
+						<div>
+							<h4 style="margin: 0 0 5px 0">モバイルファーストの重要性</h4>
+							<p style="margin: 0; font-size: 14px; color: #666">
+								スマートフォン用のデザインから作成する方法です。スマホで閲覧するユーザーが多い現代では効果的です。
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- モーダル -->
+				<section>
+					<h3>モーダルウィンドウ</h3>
+					<button id="openModalBtn" class="modal-btn">
+						キャンペーン情報を見る
+					</button>
+					<dialog id="myDialog">
+						<h3 style="margin-top: 0">🎉 春の特別キャンペーン！</h3>
+						<img
+							src="https://picsum.photos/400/200?random=6"
+							alt="キャンペーン画像"
+							style="border-radius: 4px; margin-bottom: 15px"
+						/>
+						<p>今なら全品20%オフ！この機会をお見逃しなく。</p>
+						<button id="closeModalBtn" class="close-btn">閉じる ✖</button>
+					</dialog>
+				</section>
+
+				<!-- アコーディオン -->
+				<section>
+					<h3>よくある質問（アコーディオン）</h3>
+					<details>
+						<summary>Q. ABテストとは何ですか？</summary>
+						<div class="details-content">
+							サイトやバナーなどを2パターン用意して比較する方法です。期間を決めて検証し、どちらがより良い成果を出すかを分析します。
+						</div>
+					</details>
+					<!-- ★消えていた2つ目のQ&Aを復元 -->
+					<details>
+						<summary>Q. カラムレイアウトとは何ですか？</summary>
+						<div class="details-content">
+							Webデザイン上での縦列のレイアウトのことです。分割数によって、シングルカラム・2カラム・3カラムと表現します。このページはPCで見ると2カラムです。
+						</div>
+					</details>
+				</section>
+			</main>
+
+			<aside class="sidebar">
+				<section>
+					<h3>サイドバー</h3>
+					<p style="font-size: 14px">
+						ここは2カラムレイアウトの右側です。広告バナーやおすすめ記事などを配置します。
+					</p>
+					<a href="#"
+						><img
+							src="https://picsum.photos/300/250?random=7"
+							alt="バナー広告1"
+							class="banner-img"
+					/></a>
+				</section>
+			</aside>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

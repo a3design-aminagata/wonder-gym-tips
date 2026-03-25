@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Design Tips Practical: 実務の命名と設計</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="layout-wrapper">
+		<header class="site-header sticky-header">
+			<div class="header-inner">
+				<a class="header-logo" href="#hero">Design Tips</a>
+				<nav class="global-nav" aria-label="メインナビゲーション">
+					<ul>
+						<li><a href="#hero">Hero(MV)</a></li>
+						<li><a href="#naming">Naming</a></li>
+						<li><a href="#css">CSS Align</a></li>
+						<li><a href="#faq">FAQ</a></li>
+					</ul>
+				</nav>
+				<button
+					class="hamburger-btn"
+					type="button"
+					aria-expanded="false"
+					aria-controls="mobileNav"
+					aria-label="メニューを開閉"
+				>
+					☰
+				</button>
+			</div>
+		</header>
+
+		<nav class="mobile-nav" id="mobileNav" aria-label="モバイルメニュー" aria-hidden="true">
+			<div class="mobile-nav__header">
+				<span>メニュー</span>
+				<button class="mobile-nav__close" type="button" aria-label="メニューを閉じる">×</button>
+			</div>
+			<ul class="mobile-nav__list">
+				<li><a href="#hero">Hero(MV)</a></li>
+				<li><a href="#naming">Naming</a></li>
+				<li><a href="#css">CSS Align</a></li>
+				<li><a href="#faq">FAQ</a></li>
+			</ul>
+		</nav>
+		<div class="mobile-nav__overlay" aria-hidden="true"></div>
+
+		<main class="site-main">
+			<!-- ===============================
+                Hero (資料の mv)
+                =============================== -->
+			<section id="hero" class="hero">
+				<div class="container">
+					<h1 class="hero__title">Design Tips</h1>
+					<p class="hero__lead">
+						資料の「mv」は、現代では「hero」と呼ぶのがグローバルスタンダードです。
+					</p>
+				</div>
+			</section>
+
+			<!-- ===============================
+                命名セクション (ttl や common の実務)
+                =============================== -->
+			<section id="naming" class="section">
+				<div class="container">
+					<!-- 【実務Tips】資料の「ttl」ではなく「title」と書く理由
+					     略語は人によって解釈が分かれるため、保守性を高めるためにフルスペルが推奨されます。 -->
+					<h2 class="section__title">実務でのクラス名（命名規則）</h2>
+
+					<article class="card">
+						<h3 class="card__title">✅ title vs ttl</h3>
+						<p>
+							資料の <code>ttl</code> は、実務では
+							<strong>title</strong> とフルスペルで書くのが主流です。
+						</p>
+						<ul>
+							<li>理由1：検索性が高い（ttlだと他の単語に含まれやすい）</li>
+							<li>理由2：誰が見ても「タイトル」だと一瞬でわかる</li>
+						</ul>
+					</article>
+
+					<article class="card">
+						<h3 class="card__title">✅ common ではなく component</h3>
+						<p>
+							「共通」という曖昧な名前は避け、<code>.c-card</code>
+							のように「部品」として定義します。
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<!-- ===============================
+                中央寄せ 3パターン (元の分かりやすい形式)
+                =============================== -->
+			<section id="css" class="section">
+				<div class="container">
+					<h2 class="section__title">中央寄せ 3パターン</h2>
+
+					<article class="card">
+						<h3 class="card__title">① text-align: center;</h3>
+						<p>テキストや画像を中央にしたいときに使う。</p>
+						<div class="example example--text-center">テキスト中央</div>
+					</article>
+
+					<article class="card">
+						<h3 class="card__title">② margin: 0 auto;</h3>
+						<p>横幅が決まっているブロック要素を中央にする。</p>
+						<div class="example example--block-center">ブロック中央</div>
+					</article>
+
+					<article class="card">
+						<h3 class="card__title">③ flexbox</h3>
+						<p>
+							要素を柔軟に中央配置したいとき。<strong
+								>実務のレイアウトはほぼこれ。</strong
+							>
+						</p>
+						<div class="example example--flex">
+							<div class="example__inner">flex中央</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<!-- ===============================
+                    FAQセクション (実務の構造)
+                =============================== -->
+			<section id="faq" class="section">
+				<div class="container">
+					<h2 class="section__title">FAQ (よくある質問)</h2>
+					<!-- 【実務Tips】faq は単なるクラス名ではなく、
+					     dl(定義リスト)などを使って構造的に書くのが一般的です。 -->
+					<dl class="faq-list">
+						<div class="faq-item">
+							<dt class="faq-item__question">
+								Q. 資料の wrapper はどこで使う？
+							</dt>
+							<dd class="faq-item__answer">
+								A. このコードでは <code>body</code> に
+								<code>layout-wrapper</code>
+								として設定し、ページ全体の下地を作っています。
+							</dd>
+						</div>
+						<div class="faq-item">
+							<dt class="faq-item__question">Q. nav は 1 箇所だけ？</dt>
+							<dd class="faq-item__answer">
+								A. ヘッダーだけでなく、フッターやサイドバーにも使えます。
+								<code>aria-label</code> で区別するのが実務の作法です。
+							</dd>
+						</div>
+					</dl>
+				</div>
+			</section>
+		</main>
+
+		<script src="script.js"></script>
+	</body>
+</html>
