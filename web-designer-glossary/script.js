@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// =========================================
-	// ★追加：スマホ用ハンバーガーメニューの開閉制御
+	// スマホ用ハンバーガーメニューの開閉制御
 	// =========================================
 	const hamburgerBtn = document.getElementById("hamburgerBtn");
 	const mobileNav = document.getElementById("mobileNav");
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		mobileNavList.innerHTML = globalNavUl.innerHTML;
 	}
 
-	// ★修正箇所：CSSの設定に合わせて body に "nav-open" クラスを付け外しする
+	// CSSの設定に合わせて body に "nav-open" クラスを付け外しする
 	const toggleMobileMenu = () => {
 		document.body.classList.toggle("nav-open");
 	};
