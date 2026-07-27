@@ -3,40 +3,53 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Webデザイナー専門用語</title>
+		<title>Webデザイナー専門用語｜UIパーツとSEOの基本</title>
 
 		<meta
 			name="description"
-			content="Stickyヘッダー・カルーセル・FAQなど実務UIと、タイトル/ディスクリプション/OGP/FAQリッチリザルト対応までまとめたWebデザイン教材ページ。"
+			content="Stickyヘッダー・カルーセル・FAQなど現場で使うUIパーツと、タイトル/ディスクリプション/OGP/構造化データまで、Webデザイナーの専門用語を1ページでまとめて確認できます。"
 		/>
-		<link rel="canonical" href="https://example.com/ui-parts-seo-demo" />
+		<link
+			rel="canonical"
+			href="https://a3design-aminagata.github.io/wonder-gym-tips/web-designer-glossary/"
+		/>
 		<meta name="robots" content="index, follow" />
-		<meta name="author" content="MyDesign Lesson" />
+		<meta name="author" content="MyDesign" />
 
 		<!-- OGP（SNSシェア用） -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="MyDesign" />
-		<meta property="og:title" content="Webデザイナー専門用語" />
+		<meta
+			property="og:title"
+			content="Webデザイナー専門用語｜UIパーツとSEOの基本"
+		/>
 		<meta
 			property="og:description"
-			content="Stickyヘッダー/カルーセル/FAQの実装と、SEO基本タグ・構造化データをまとめた授業用デモページ。"
+			content="Stickyヘッダー・カルーセル・FAQなど現場で使うUIパーツと、SEOの基本タグ・構造化データをまとめたページ。"
 		/>
+		<!-- og:imageは毎回同じ画像になるURLを指定する（ランダム画像だとシェアのたびに絵柄が変わってしまう） -->
 		<meta
 			property="og:image"
-			content="https://picsum.photos/1200/630?random=20"
+			content="https://picsum.photos/id/180/1200/630"
 		/>
-		<meta property="og:url" content="https://example.com/ui-parts-seo-demo" />
+		<meta
+			property="og:url"
+			content="https://a3design-aminagata.github.io/wonder-gym-tips/web-designer-glossary/"
+		/>
 
 		<!-- Twitterカード -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Webデザイナー専門用語" />
+		<meta
+			name="twitter:title"
+			content="Webデザイナー専門用語｜UIパーツとSEOの基本"
+		/>
 		<meta
 			name="twitter:description"
-			content="UIパーツ実装とSEOタグの基本を1ページで学べるデモ。授業用にコメント付き。"
+			content="UIパーツの呼び方とSEOタグの基本を1ページで確認できるまとめページ。"
 		/>
 		<meta
 			name="twitter:image"
-			content="https://picsum.photos/1200/630?random=20"
+			content="https://picsum.photos/id/180/1200/630"
 		/>
 
 		<!-- 構造化データ（JSON-LD） -->
@@ -48,9 +61,9 @@
 				{
 					"@context": "https://schema.org",
 					"@type": "WebPage",
-					"name": "Webデザイナー専門用語",
-					"description": "Stickyヘッダー・カルーセル・FAQなど実務UIと、タイトル/ディスクリプション/OGP/FAQリッチリザルト対応までまとめたWebデザイン教材ページ。",
-					"url": "https://example.com/ui-parts-seo-demo"
+					"name": "Webデザイナー専門用語｜UIパーツとSEOの基本",
+					"description": "Stickyヘッダー・カルーセル・FAQなど現場で使うUIパーツと、タイトル/ディスクリプション/OGP/構造化データまで、Webデザイナーの専門用語を1ページでまとめて確認できます。",
+					"url": "https://a3design-aminagata.github.io/wonder-gym-tips/web-designer-glossary/"
 				},
 				{
 					"@context": "https://schema.org",
@@ -91,10 +104,11 @@
 		<!-- 追従ヘッダー -->
 		<header class="sticky-header">
 			<div class="header-inner">
+				<!-- 同じリンクの中に「MyDesign」という文字があるので、ロゴ画像は飾り扱いで alt="" にする -->
 				<a href="#" class="header-logo">
 					<img
 						src="https://picsum.photos/40/40?random=10"
-						alt="ロゴ"
+						alt=""
 						style="border-radius: 50%"
 					/>
 					MyDesign
@@ -179,7 +193,7 @@
 
 		<div class="container">
 			<main class="main-content">
-				<h1>UIパーツとSEOまとめ</h1>
+				<h1>Webデザイナー専門用語 ― UIパーツとSEOの基本</h1>
 				<div class="seo-note">
 					<strong>このページで実践しているSEOリスト</strong>
 					<ul>
@@ -188,7 +202,7 @@
 						<li>見出し階層を整理：h1は1回、h2/h3で内容のアウトラインを作る</li>
 						<li>
 							画像のaltは内容が伝わる言葉で書く（意味を持たない飾りの画像は
-							alt="" で空にする）
+							<code>alt=""</code> で空にする）
 						</li>
 						<li>構造化データ（WebPage + FAQPage）でリッチリザルトを狙う</li>
 					</ul>
@@ -196,28 +210,29 @@
 
 				<!-- カルーセル -->
 				<section>
-					<h3>カルーセル（スライド）</h3>
+					<h2>カルーセル（スライド）</h2>
 					<p style="margin-bottom: 15px; font-size: 14px; color: #666">
 						画像を左右にドラッグして操作可能
 					</p>
+					<!-- ここの画像は仮のサンプルです。altは「その画像に何が写っているか・何を伝えたいか」を、実際に入れる画像に合わせて書き換えます -->
 					<div class="swiper mySwiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<img
 									src="https://picsum.photos/800/400?random=1"
-									alt="スライド1"
+									alt="旬のフルーツを集めた春の新商品特集"
 								/>
 							</div>
 							<div class="swiper-slide">
 								<img
 									src="https://picsum.photos/800/400?random=2"
-									alt="スライド2"
+									alt="産地直送のお肉・海鮮の詰め合わせ"
 								/>
 							</div>
 							<div class="swiper-slide">
 								<img
 									src="https://picsum.photos/800/400?random=3"
-									alt="スライド3"
+									alt="季節限定ドリンクの飲み比べセット"
 								/>
 							</div>
 						</div>
@@ -229,26 +244,21 @@
 
 				<!-- 記事レイアウト -->
 				<section>
-					<h3>最新の記事（レイアウトの例）</h3>
+					<h2>最新の記事（レイアウトの例）</h2>
+					<!-- サムネイルはすぐ隣に記事タイトルの文字があるので、飾りとして alt="" にする（読み上げでタイトルが二重に聞こえるのを防ぐ） -->
 					<div class="post-card">
-						<img
-							src="https://picsum.photos/100/100?random=4"
-							alt="サムネイル"
-						/>
+						<img src="https://picsum.photos/100/100?random=4" alt="" />
 						<div>
-							<h4 style="margin: 0 0 5px 0">SEO対策の基本とは？</h4>
+							<h3>SEO対策の基本とは？</h3>
 							<p style="margin: 0; font-size: 14px; color: #666">
 								適切なキーワードや構造・質の高い内容を整えることで、検索結果でサイトを上位に表示させるための工夫です。
 							</p>
 						</div>
 					</div>
 					<div class="post-card">
-						<img
-							src="https://picsum.photos/100/100?random=5"
-							alt="サムネイル"
-						/>
+						<img src="https://picsum.photos/100/100?random=5" alt="" />
 						<div>
-							<h4 style="margin: 0 0 5px 0">モバイルファーストの重要性</h4>
+							<h3>モバイルファーストの重要性</h3>
 							<p style="margin: 0; font-size: 14px; color: #666">
 								スマートフォンでの閲覧を最優先に考え、設計・デザインする手法です。限られた画面で情報を整理し優先順位を高めることで利便性が向上します。現在はGoogleもスマホ版を基準にサイトを評価しています。
 							</p>
@@ -258,15 +268,15 @@
 
 				<!-- モーダル -->
 				<section>
-					<h3>モーダルウィンドウ</h3>
+					<h2>モーダルウィンドウ</h2>
 					<button id="openModalBtn" class="modal-btn">
 						キャンペーン情報を見る
 					</button>
 					<dialog id="myDialog">
-						<h3 style="margin-top: 0">🎉 春の特別キャンペーン！</h3>
+						<h3>🎉 春の特別キャンペーン！</h3>
 						<img
 							src="https://picsum.photos/400/200?random=6"
-							alt="キャンペーン画像"
+							alt="桜をイメージした春のキャンペーンビジュアル"
 							style="border-radius: 4px; margin-bottom: 15px"
 						/>
 						<p>今なら全品20%オフ！この機会をお見逃しなく。</p>
@@ -276,7 +286,7 @@
 
 				<!-- アコーディオン -->
 				<section>
-					<h3>よくある質問（アコーディオン）</h3>
+					<h2>よくある質問（アコーディオン）</h2>
 					<details>
 						<summary>Q. ABテストとは何ですか？</summary>
 						<div class="details-content">
@@ -294,14 +304,15 @@
 
 			<aside class="sidebar">
 				<section>
-					<h3>サイドバー</h3>
+					<h2>サイドバー</h2>
 					<p style="font-size: 14px">
 						PCでは2カラム。<br />スマホでは本文の下に回り込む1カラム構成。<br />広告バナーやおすすめ記事などを置く想定です。
 					</p>
+					<!-- リンクの中の画像は「押すとどこへ行くか」をaltに書く（ここがリンクの読み上げ文になるため） -->
 					<a href="#"
 						><img
 							src="https://picsum.photos/300/250?random=7"
-							alt="バナー広告1"
+							alt="今月のおすすめ商品特集を見る"
 							class="banner-img"
 					/></a>
 				</section>
