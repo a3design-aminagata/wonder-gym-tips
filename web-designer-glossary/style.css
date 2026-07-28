@@ -43,11 +43,21 @@ h1 {
 	padding-left: 18px;
 	margin: 10px 0 0 0;
 }
-.seo-note code {
-	background: rgba(31, 78, 121, 0.1);
+/* 本文中のコード表記・キー表記 */
+code {
+	background: rgba(44, 62, 80, 0.09);
 	border-radius: 3px;
 	padding: 1px 5px;
 	font-size: 0.95em;
+	white-space: nowrap;
+}
+.details-content kbd {
+	background: #fff;
+	border: 1px solid #bbb;
+	border-bottom-width: 2px;
+	border-radius: 4px;
+	padding: 0 5px;
+	font-size: 0.9em;
 }
 
 /* =========================================

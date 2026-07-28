@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	// 1. Swiper（カルーセル）の初期化
 	const swiper = new Swiper(".mySwiper", {
 		loop: true,
-		autoplay: { delay: 3000, disableOnInteraction: false },
+		// disableOnInteraction: true → ユーザーが自分で操作したら自動再生を止める
+		// （読んでいる途中で勝手に切り替わらないようにするため）
+		autoplay: { delay: 3000, disableOnInteraction: true },
 		pagination: { el: ".swiper-pagination", clickable: true },
 		navigation: {
 			nextEl: ".swiper-button-next",
