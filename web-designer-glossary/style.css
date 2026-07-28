@@ -51,6 +51,13 @@ code {
 	font-size: 0.95em;
 	white-space: nowrap;
 }
+.details-content ul {
+	margin: 10px 0;
+	padding-left: 20px;
+}
+.details-content li {
+	margin-bottom: 8px;
+}
 .details-content kbd {
 	background: #fff;
 	border: 1px solid #bbb;
@@ -134,7 +141,10 @@ code {
 	padding: 0;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-.global-nav > ul > li:hover .dropdown-menu {
+/* マウスを乗せたときに加えて、キーボードのTabで中に入ったときも開くようにする
+   （:focus-within が無いと、マウスを使わない人はこのメニューを開けない） */
+.global-nav > ul > li:hover .dropdown-menu,
+.global-nav > ul > li:focus-within .dropdown-menu {
 	display: block;
 }
 .dropdown-menu li {
@@ -194,6 +204,17 @@ code {
 }
 .sidebar {
 	flex: 1;
+}
+/* PC表示のとき、サイドバーを position: sticky の実演にする。
+   最初はページと一緒に下へ流れ、ヘッダーの下まで来ると止まって貼り付く。
+   align-self: flex-start が無いとサイドバーが親と同じ高さまで伸びてしまい、
+   stickyが効かなくなる（flexアイテムのよくあるつまずきポイント） */
+@media (min-width: 769px) {
+	.sidebar {
+		position: sticky;
+		top: 80px;
+		align-self: flex-start;
+	}
 }
 
 section {

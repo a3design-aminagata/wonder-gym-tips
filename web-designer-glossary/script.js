@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (dialog && openBtn && closeBtn) {
 		openBtn.addEventListener("click", () => dialog.showModal());
 		closeBtn.addEventListener("click", () => dialog.close());
+
+		// 背景（暗くなっている部分）をクリックしても閉じられるようにする。
+		// Escキーで閉じるのは <dialog> がもともと持っている動き
+		dialog.addEventListener("click", (e) => {
+			if (e.target === dialog) dialog.close();
+		});
 	}
 
 	// =========================================
